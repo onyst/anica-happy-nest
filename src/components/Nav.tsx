@@ -1,0 +1,69 @@
+import { useState } from 'react'
+
+const LINKS = [
+  { href: '#stay', label: 'Ways to Stay' },
+  { href: '#rates', label: 'Rates' },
+  { href: '#book', label: 'Book' },
+  { href: '#rules', label: 'House Rules' },
+  { href: '#location', label: 'Location' },
+]
+
+export function Nav() {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <nav className="sticky top-0 z-50 bg-forest/96 backdrop-blur-sm">
+      <div className="mx-auto flex max-w-[1080px] items-center justify-between px-7 py-4">
+        <div className="flex items-center gap-2.5 text-paper">
+          <svg className="h-[34px] w-[34px] shrink-0 rounded" viewBox="0 0 34 34" aria-hidden="true">
+            <rect width="34" height="34" rx="6" fill="#21332B" />
+            <path d="M17 6c-5 4-8 9-8 13a8 8 0 0016 0c0-4-3-9-8-13z" fill="#DD8B3C" />
+            <circle cx="17" cy="19" r="3" fill="#21332B" />
+          </svg>
+          <div className="font-serif text-[17px] font-semibold">
+            AniCa Happy Nest Campsite
+            <span className="mt-0.5 block font-sans text-[10.5px] font-medium tracking-wide text-[#B9C7BC]">
+              Lumot Lake · Cavinti, Laguna
+            </span>
+          </div>
+        </div>
+        <div className="relative flex items-center gap-7">
+          <button
+            type="button"
+            className="flex h-[38px] w-[38px] items-center justify-center rounded-[3px] border border-paper/45 text-paper sm:hidden"
+            aria-expanded={open}
+            aria-controls="navMenu"
+            aria-label="Toggle navigation menu"
+            onClick={() => setOpen((o) => !o)}
+          >
+            ☰
+          </button>
+          <ul
+            id="navMenu"
+            className={`${
+              open ? 'flex' : 'hidden'
+            } absolute right-0 top-[calc(100%+12px)] min-w-[180px] flex-col gap-4 rounded border border-paper/[0.14] bg-forest-deep px-5 py-3.5 sm:static sm:flex sm:flex-row sm:gap-7 sm:border-0 sm:bg-transparent sm:p-0`}
+          >
+            {LINKS.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className="text-[14.5px] font-medium text-[#DCE4DE] hover:text-white"
+                  onClick={() => setOpen(false)}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <a
+            href="#book"
+            className="hidden items-center gap-2 rounded-[3px] bg-ember-deep px-[26px] py-3.5 text-[15.5px] font-semibold text-white transition-colors hover:bg-ember-deep-hover sm:inline-flex"
+          >
+            Reserve
+          </a>
+        </div>
+      </div>
+    </nav>
+  )
+}

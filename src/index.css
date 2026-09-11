@@ -1,0 +1,132 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.375rem;
+
+  /* AniCa Happy Nest brand palette */
+  --forest: #21332b;
+  --forest-deep: #182620;
+  --moss: #5b6b58;
+  --paper: #f5f0e3;
+  --paper-warm: #efe7d4;
+  --ember: #dd8b3c;
+  --ember-deep: #a8501e;
+  --ember-deep-hover: #8a3f16;
+  --water: #6e93a0;
+  --water-text: #3e6b76;
+  --ink: #1d251e;
+  --line: #dbd1b8;
+  --status-full: #b4562f;
+  --status-limited: #dd8b3c;
+  --status-open: #4f7a5c;
+  --status-open-text: #3c7049;
+  --status-limited-text: #8a5a16;
+  --status-full-text: #ac441f;
+
+  /* shadcn tokens, mapped to the brand palette */
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: #ffffff;
+  --card-foreground: var(--ink);
+  --popover: #ffffff;
+  --popover-foreground: var(--ink);
+  --primary: var(--ember-deep);
+  --primary-foreground: #ffffff;
+  --secondary: var(--paper-warm);
+  --secondary-foreground: var(--forest-deep);
+  --muted: var(--paper-warm);
+  --muted-foreground: var(--moss);
+  --accent: var(--paper-warm);
+  --accent-foreground: var(--forest-deep);
+  --destructive: #b4562f;
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--forest-deep);
+}
+
+@theme inline {
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Fraunces', serif;
+
+  --color-forest: var(--forest);
+  --color-forest-deep: var(--forest-deep);
+  --color-moss: var(--moss);
+  --color-paper: var(--paper);
+  --color-paper-warm: var(--paper-warm);
+  --color-ember: var(--ember);
+  --color-ember-deep: var(--ember-deep);
+  --color-ember-deep-hover: var(--ember-deep-hover);
+  --color-water: var(--water);
+  --color-water-text: var(--water-text);
+  --color-ink: var(--ink);
+  --color-line: var(--line);
+  --color-status-full: var(--status-full);
+  --color-status-limited: var(--status-limited);
+  --color-status-open: var(--status-open);
+  --color-status-open-text: var(--status-open-text);
+  --color-status-limited-text: var(--status-limited-text);
+  --color-status-full-text: var(--status-full-text);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    line-height: 1.55;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-serif font-semibold text-forest-deep;
+    letter-spacing: -0.01em;
+  }
+}
+
+@keyframes fadeInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInTop {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInFromTop 0.8s ease-in-out forwards;
+}
