@@ -92,7 +92,7 @@ const InteractiveSelector = () => {
           return (
             <div
               key={option.title}
-              className="relative flex flex-col justify-end overflow-hidden transition-all duration-700 ease-in-out cursor-pointer"
+              className="relative flex min-w-9 flex-col justify-end overflow-hidden transition-all duration-700 ease-in-out cursor-pointer sm:min-w-[60px]"
               style={{
                 backgroundImage: `url('${option.image}')`,
                 backgroundSize: isActive ? 'auto 100%' : 'auto 120%',
@@ -100,7 +100,6 @@ const InteractiveSelector = () => {
                 backfaceVisibility: 'hidden',
                 opacity: animatedOptions.includes(index) ? 1 : 0,
                 transform: animatedOptions.includes(index) ? 'translateX(0)' : 'translateX(-60px)',
-                minWidth: '60px',
                 minHeight: '100px',
                 margin: 0,
                 borderRadius: 0,
@@ -130,13 +129,13 @@ const InteractiveSelector = () => {
               />
 
               {/* Label with icon and info */}
-              <div className="absolute left-0 right-0 bottom-5 flex items-center justify-start h-12 z-[2] pointer-events-none px-4 gap-3 w-full">
-                <div className="min-w-[44px] max-w-[44px] h-[44px] flex items-center justify-center rounded-full bg-[rgba(32,32,32,0.85)] backdrop-blur-[10px] shadow-[0_1px_4px_rgba(0,0,0,0.18)] border-2 border-[#444] flex-shrink-0 flex-grow-0 transition-all duration-200">
+              <div className="absolute left-0 right-0 bottom-5 flex items-start justify-start z-[2] pointer-events-none px-2.5 gap-2 sm:px-4 sm:gap-3 w-full">
+                <div className="min-w-[36px] max-w-[36px] h-[36px] sm:min-w-[44px] sm:max-w-[44px] sm:h-[44px] flex items-center justify-center rounded-full bg-[rgba(32,32,32,0.85)] backdrop-blur-[10px] shadow-[0_1px_4px_rgba(0,0,0,0.18)] border-2 border-[#444] flex-shrink-0 flex-grow-0 transition-all duration-200">
                   {option.icon}
                 </div>
-                <div className="text-white whitespace-pre relative">
+                <div className="min-w-0 flex-1 text-white relative">
                   <div
-                    className="font-bold text-lg transition-all duration-700 ease-in-out"
+                    className="font-bold text-base sm:text-lg leading-snug transition-all duration-700 ease-in-out"
                     style={{
                       opacity: isActive ? 1 : 0,
                       transform: isActive ? 'translateX(0)' : 'translateX(25px)',
@@ -145,7 +144,7 @@ const InteractiveSelector = () => {
                     {option.title}
                   </div>
                   <div
-                    className="text-base text-gray-300 transition-all duration-700 ease-in-out"
+                    className="text-sm sm:text-base text-gray-300 leading-snug transition-all duration-700 ease-in-out"
                     style={{
                       opacity: isActive ? 1 : 0,
                       transform: isActive ? 'translateX(0)' : 'translateX(25px)',
