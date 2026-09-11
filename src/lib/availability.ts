@@ -43,7 +43,7 @@ export function toKey(y: number, m: number, d: number): string {
  * Shape matches booking-availability-api.gs exactly:
  * { "YYYY-MM-DD": { "TypeName": { total, booked, available } } }
  * Swap this for a real fetch() to the deployed Apps Script URL once it's
- * live — the render logic elsewhere doesn't need to change.
+ * live. The render logic elsewhere doesn't need to change.
  */
 export function generateMockAvailability(daysAhead: number): AvailabilityMap {
   const data: AvailabilityMap = {}

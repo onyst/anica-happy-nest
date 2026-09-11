@@ -1,5 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "@fontsource-variable/bricolage-grotesque";
+@import "@fontsource-variable/manrope";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -48,8 +50,8 @@
 }
 
 @theme inline {
-  --font-sans: 'Inter', sans-serif;
-  --font-serif: 'Fraunces', serif;
+  --font-sans: 'Manrope Variable', sans-serif;
+  --font-display: 'Bricolage Grotesque Variable', sans-serif;
 
   --color-forest: var(--forest);
   --color-forest-deep: var(--forest-deep);
@@ -109,8 +111,7 @@
   h1,
   h2,
   h3 {
-    @apply font-serif font-semibold text-forest-deep;
-    letter-spacing: -0.01em;
+    @apply font-display font-semibold text-forest-deep tracking-tight;
   }
 }
 

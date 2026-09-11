@@ -1,3 +1,4 @@
+import { Reveal } from './Reveal'
 import { SectionHead } from './SectionHead'
 
 interface RateRow {
@@ -8,7 +9,7 @@ interface RateRow {
 
 const GROUND: RateRow[] = [
   { name: 'Tent Pitching Only', desc: 'Bring your own tent', price: '₱300/pax' },
-  { name: 'Carcamping', desc: 'Tent beside your car — includes 3 pax', price: '₱1,500' },
+  { name: 'Carcamping', desc: 'Tent beside your car, includes 3 pax', price: '₱1,500' },
   { name: 'Motocamping', desc: 'Tent beside your motorcycle', price: '₱300/pax' },
 ]
 
@@ -46,7 +47,7 @@ function RateTable({ caption, rows }: { caption: string; rows: RateRow[] }) {
               {row.name}
               {row.desc && <span className="mt-0.5 block text-[12.5px] text-moss">{row.desc}</span>}
             </td>
-            <td className="whitespace-nowrap border-b border-line py-3.5 pl-3 text-right font-serif font-semibold text-forest-deep">
+            <td className="whitespace-nowrap border-b border-line py-3.5 pl-3 text-right font-display font-semibold text-forest-deep">
               {row.price}
             </td>
           </tr>
@@ -59,23 +60,23 @@ function RateTable({ caption, rows }: { caption: string; rows: RateRow[] }) {
 export function Rates() {
   return (
     <section id="rates" className="py-22">
-      <div className="mx-auto max-w-[1080px] px-7">
+      <div className="mx-auto max-w-[1160px] px-7">
         <SectionHead kicker="Rates" title="Twelve ways to camp, one base fee.">
           Every stay includes the ₱300/pax camping fee. Cottages and covered spots add a flat
           charge on top.
         </SectionHead>
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2">
-          <div>
+          <Reveal>
             <h3 className="mb-3.5 text-[15px] font-bold text-water-text">Ground &amp; Vehicle</h3>
             <RateTable caption="Ground & Vehicle rates: accommodation and rate" rows={GROUND} />
-          </div>
-          <div>
+          </Reveal>
+          <Reveal delay={0.08}>
             <h3 className="mb-3.5 text-[15px] font-bold text-water-text">Cottages &amp; Kubo</h3>
             <RateTable caption="Cottages & Kubo rates: accommodation and rate" rows={COTTAGES} />
-          </div>
+          </Reveal>
         </div>
         <p className="mt-7 border-l-2 border-ember pl-3.5 text-sm text-moss">
-          Reservation fee is ₱100/pax (tent) and/or 50% of the cottage rental — deductible from
+          Reservation fee is ₱100/pax (tent) and/or 50% of the cottage rental. Deductible from
           your total, non-refundable but transferable to another date.
         </p>
       </div>
