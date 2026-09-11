@@ -12,6 +12,13 @@ dist
 dist-ssr
 *.local
 
+# Skill/tool runtime artifacts
+.playwright-cli/
+.impeccable/*.png
+.impeccable/review/
+.impeccable/questions/
+.impeccable/config.local.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
