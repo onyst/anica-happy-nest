@@ -1,4 +1,5 @@
 import { Calendar } from './Calendar'
+import { Reveal } from './Reveal'
 import { SectionHead } from './SectionHead'
 
 const STEPS = [
@@ -12,7 +13,7 @@ const STEPS = [
     title: 'Send your reservation fee',
     body: (
       <>
-        GCash to <strong>0917&nbsp;871&nbsp;3106</strong> — ₱100/pax and/or 50% of your Ahouse.
+        GCash to <strong>0917&nbsp;871&nbsp;3106</strong>: ₱100/pax and/or 50% of your Ahouse.
       </>
     ),
   },
@@ -43,19 +44,19 @@ const STEPS = [
 export function Booking() {
   return (
     <section id="book" className="py-22">
-      <div className="mx-auto max-w-[1080px] px-7">
+      <div className="mx-auto max-w-[1160px] px-7">
         <SectionHead kicker="How to book" title="Four steps, no back-and-forth.">
-          Check the calendar for open dates first — it reflects real bookings, so what you see is
+          Check the calendar for open dates first. It reflects real bookings, so what you see is
           what's actually available.
         </SectionHead>
 
-        <div className="mb-14 grid grid-cols-1 gap-7 sm:grid-cols-3">
-          {STEPS.map((step) => (
-            <div key={step.no} className="border-t-2 border-forest-deep pt-4">
-              <div className="font-serif text-[26px] text-ember-deep">{step.no}</div>
+        <div className="mb-14 grid grid-cols-2 gap-7 sm:grid-cols-4">
+          {STEPS.map((step, i) => (
+            <Reveal key={step.no} delay={i * 0.06} className="border-t-2 border-forest-deep pt-4">
+              <div className="font-display text-[26px] text-ember-deep">{step.no}</div>
               <h3 className="mb-1.5 mt-2 text-base font-bold text-ink">{step.title}</h3>
               <p className="text-sm text-moss">{step.body}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
 

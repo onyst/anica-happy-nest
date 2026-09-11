@@ -75,11 +75,11 @@ const InteractiveSelector = () => {
     <div className="relative flex flex-col items-center justify-center bg-[#222] font-sans text-white py-16">
       {/* Header Section */}
       <div className="w-full max-w-2xl px-6 mb-2 text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-3 tracking-tight drop-shadow-lg animate-fadeInTop [animation-delay:0.3s]">
-          Twelve Ways to Camp
-        </h1>
+        <h2 className="text-4xl md:text-5xl font-display font-semibold text-white mb-3 tracking-tight animate-fadeInTop [animation-delay:0.3s]">
+          Twelve ways to camp
+        </h2>
         <p className="text-lg md:text-xl text-gray-300 font-medium max-w-xl mx-auto animate-fadeInTop [animation-delay:0.6s]">
-          Lakeside camping on Lumot Lake, Cavinti — tent to kubo, one base fee.
+          Tent to kubo, one base fee. Tap a card to see what's included.
         </p>
       </div>
 
@@ -161,8 +161,8 @@ const InteractiveSelector = () => {
       </div>
 
       <p className="mt-6 max-w-xl px-6 text-center text-xs text-gray-400">
-        Photos pulled from the campsite's Google Maps listing for this preview — swap for
-        AniCa's own photography before this page goes live.
+        Photos pulled from the campsite's Google Maps listing for this preview. Swap for AniCa's
+        own photography before this page goes live.
       </p>
     </div>
   )

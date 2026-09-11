@@ -89,7 +89,7 @@ export function Calendar() {
   }, [availability, selectedKey])
 
   return (
-    <div className="grid grid-cols-1 gap-9 rounded border border-line bg-white p-8 sm:grid-cols-[1.2fr_1fr]">
+    <div className="grid grid-cols-1 gap-9 rounded-2xl border border-line bg-white p-8 sm:grid-cols-[1.2fr_1fr]">
       <div>
         <div className="mb-4.5 flex items-center justify-between">
           <h3 className="text-[18px]">
@@ -160,7 +160,7 @@ export function Calendar() {
                         }
                       }
                 }
-                className={`relative flex aspect-square flex-col items-center justify-center rounded text-[13px] ${
+                className={`relative flex aspect-square flex-col items-center justify-center rounded-lg text-[13px] ${
                   isPast
                     ? 'cursor-default text-[#C6BFAA]'
                     : `cursor-pointer border border-transparent text-ink hover:border-forest-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-ember-deep focus-visible:outline-offset-2 ${
@@ -197,7 +197,7 @@ export function Calendar() {
         </div>
       </div>
 
-      <div className="rounded bg-paper-warm p-5.5" aria-live="polite">
+      <div className="rounded-2xl bg-paper-warm p-5.5" aria-live="polite">
         {!selectedDetail ? (
           <div className="py-5 text-[13.5px] text-moss">
             Tap a date to see availability by accommodation type.
@@ -206,14 +206,14 @@ export function Calendar() {
           <>
             <h4 className="mb-1 text-[15px]">{selectedDetail.label}</h4>
             <div className="py-5 text-[13.5px] text-moss">
-              Availability for this date isn't listed yet — message us to check.
+              Availability for this date isn't listed yet. Message us to check.
             </div>
           </>
         ) : (
           <>
             <h4 className="mb-1 text-[15px]">{selectedDetail.label}</h4>
             <div className="mb-4 text-[12.5px] text-moss">
-              Tent, car &amp; motocamping have no fixed cap — always bookable.
+              Tent, car &amp; motocamping have no fixed cap and are always bookable.
             </div>
             {CAPPED_TYPES.map((type) => {
               const info = selectedDetail.day?.[type]
