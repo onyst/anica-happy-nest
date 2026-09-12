@@ -19,6 +19,9 @@ dist-ssr
 .impeccable/questions/
 .impeccable/config.local.json
 
+# Raw client photo/video uploads (large, unprocessed originals - not web assets)
+client-images/raw/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
