@@ -15,19 +15,13 @@ export function Nav() {
     <nav className="sticky top-0 z-50 bg-forest/96 backdrop-blur-sm">
       <div className="mx-auto flex max-w-[1160px] items-center justify-between px-7 py-4">
         <div className="flex items-center gap-2.5 text-paper">
-          <svg className="h-[34px] w-[34px] shrink-0" viewBox="0 0 34 34" aria-hidden="true">
-            <rect width="34" height="34" rx="6" fill="#F5F0E3" />
-            <path d="M4 25 L10 12 L16 25 Z" fill="#182620" />
-            <path d="M10 25 L17 5 L24 25 Z" fill="#182620" />
-            <path d="M18 25 L24 13 L30 25 Z" fill="#182620" />
-            <path d="M7.5 17 L10 12.5 L12.5 17 L10 15 Z" fill="#F5F0E3" />
-            <path d="M13.5 12.5 L17 6 L20.5 12.5 L17 10 Z" fill="#F5F0E3" />
-            <path d="M21.5 19 L24 14.5 L26.5 19 L24 17 Z" fill="#F5F0E3" />
-            <path
-              d="M3 26 C 9 22.5, 14 26.5, 19 23.5 C 24 20.5, 28 24, 31 22 L 31 30 C 28 32, 24 28.5, 19 31.5 C 14 34.5, 9 30.5, 3 34 Z"
-              fill="#DD8B3C"
-            />
-          </svg>
+          <img
+            src="/logo.png"
+            alt="AniCa Happy Nest Campsite logo"
+            className="h-[38px] w-[38px] shrink-0"
+            width={38}
+            height={38}
+          />
           <div className="font-display text-[17px] font-semibold">
             AniCa Happy Nest Campsite
             <span className="mt-0.5 block font-sans text-[10.5px] font-medium tracking-wide text-[#B9C7BC]">
